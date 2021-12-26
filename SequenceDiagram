@@ -1,0 +1,31 @@
+...
+sequenceDiagram
+  Пользователь ->> Сайт: Авторизацияю
+  Сайт->> API: Отправка логин и пароля
+  API->>Сайт: 
+  Сайт->> Сайт: Вход в личный кабинет
+  Пользователь ->> Сайт: Загружает данные пульсоксиметр
+  Сайт->> API: Обработка полученных данных
+  API ->> БД: Отправка запроса на сравнение полученных данных
+  БД->> API: Возвращает результат
+  API ->> Сайт: Формирует результат
+  Сайт->> Сайт: Показывает результат
+...
+
+[![](https://mermaid.ink/img/eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG4gICAg0J_QvtC70YzQt9C-0LLQsNGC0LXQu9GMIC0-PiDQodCw0LnRgjog0JLRhdC-0LQg0LIg0LvQuNGH0L3Ri9C5INC60LDQsdC40L3QtdGCXG4gICAg0J_QvtC70YzQt9C-0LLQsNGC0LXQu9GMIC0-PiDQodCw0LnRgjog0JfQsNCz0YDRg9C20LDQtdGCINC00LDQvdC90YvQtSDQv9GD0LvRjNGB0L7QutGB0LjQvNC10YLRgFxuICAgINCh0LDQudGCLT4-IEFQSTog0J7QsdGA0LDQsdC-0YLQutCwINC_0L7Qu9GD0YfQtdC90L3Ri9GFINC00LDQvdC90YvRhVxuICAgIEFQSSAtPj4g0JHQlDog0J7RgtC_0YDQsNCy0LrQsCDQt9Cw0L_RgNC-0YHQsCDQvdCwINGB0YDQsNCy0L3QtdC90LjQtSDQv9C-0LvRg9GH0LXQvdC90YvRhSDQtNCw0L3QvdGL0YVcbiAgICDQkdCULT4-IEFQSTog0JLQvtC30LLRgNCw0YnQsNC10YIg0YDQtdC30YPQu9GM0YLQsNGCXG4gICAgQVBJIC0-PiDQodCw0LnRgjog0KTQvtGA0LzQuNGA0YPQtdGCINGA0LXQt9GD0LvRjNGC0LDRglxuICAgINCh0LDQudGCLT4-INCh0LDQudGCOiDQn9C-0LrQsNC30YvQstCw0LXRgiDRgNC10LfRg9C70YzRgtCw0YJcblxuICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGFyayJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)](https://mermaid-js.github.io/mermaid-live-editor/edit/#eyJjb2RlIjoic2VxdWVuY2VEaWFncmFtXG4gICAg0J_QvtC70YzQt9C-0LLQsNGC0LXQu9GMIC0-PiDQodCw0LnRgjog0JLRhdC-0LQg0LIg0LvQuNGH0L3Ri9C5INC60LDQsdC40L3QtdGCXG4gICAg0J_QvtC70YzQt9C-0LLQsNGC0LXQu9GMIC0-PiDQodCw0LnRgjog0JfQsNCz0YDRg9C20LDQtdGCINC00LDQvdC90YvQtSDQv9GD0LvRjNGB0L7QutGB0LjQvNC10YLRgFxuICAgINCh0LDQudGCLT4-IEFQSTog0J7QsdGA0LDQsdC-0YLQutCwINC_0L7Qu9GD0YfQtdC90L3Ri9GFINC00LDQvdC90YvRhVxuICAgIEFQSSAtPj4g0JHQlDog0J7RgtC_0YDQsNCy0LrQsCDQt9Cw0L_RgNC-0YHQsCDQvdCwINGB0YDQsNCy0L3QtdC90LjQtSDQv9C-0LvRg9GH0LXQvdC90YvRhSDQtNCw0L3QvdGL0YVcbiAgICDQkdCULT4-IEFQSTog0JLQvtC30LLRgNCw0YnQsNC10YIg0YDQtdC30YPQu9GM0YLQsNGCXG4gICAgQVBJIC0-PiDQodCw0LnRgjog0KTQvtGA0LzQuNGA0YPQtdGCINGA0LXQt9GD0LvRjNGC0LDRglxuICAgINCh0LDQudGCLT4-INCh0LDQudGCOiDQn9C-0LrQsNC30YvQstCw0LXRgiDRgNC10LfRg9C70YzRgtCw0YJcblxuICAiLCJtZXJtYWlkIjoie1xuICBcInRoZW1lXCI6IFwiZGFya1wiXG59IiwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ)
+
+# Предусловия
+* Пользователь должен быть зарегистрирован и авторизован
+* У пользователя должен быть пульсоксиметр
+
+# Постусловия
+* Заключение на основе диагнозов сгенерировано
+
+# Сценарий
+* Пользователь заходит в личный кабинет
+* Загружает данные пульсоксиметра
+* Сайт обрабатывает полученные данные
+* API отправляет запрос БД на сравнение полученных данных
+* БД возвращает полученный результат
+* API формирует результат
+* Сайт отображает полученный результат
